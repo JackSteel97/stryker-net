@@ -196,6 +196,11 @@ namespace Stryker.Core.Options
         public OptimizationModes OptimizationMode { get; init; }
 
         /// <summary>
+        /// When true the calculation of mutation score ignores any NoCoverage mutants.
+        /// </summary>
+        public bool ScoreIngoresNoCoverage { get; init; }
+
+        /// <summary>
         /// This name is used in the dashboard report
         /// Is settable because this version can be detected by using DotNet.ReproducibleBuilds and thus can be overridden by stryker internally
         /// </summary>
@@ -280,6 +285,7 @@ namespace Stryker.Core.Options
             Thresholds = Thresholds,
             WithBaseline = WithBaseline,
             BreakOnInitialTestFailure = BreakOnInitialTestFailure,
+            ScoreIngoresNoCoverage = ScoreIngoresNoCoverage,
         };
     }
 }
